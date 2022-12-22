@@ -22,6 +22,8 @@ jobs:
       run: ls target
     - name: check2
       run: ls target/debug
+    - name: check3
+      run: ls target/debug/create-rust-app
 #     - name: build-output
 #       uses: actions/upload-artifact@v1.0.0
 #       with:
