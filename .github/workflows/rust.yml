@@ -15,11 +15,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: ⚡ Cache
+      uses: actions/cache@v2
+      with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
     - uses: actions/checkout@v3
     - name: Build
-      run: cargo build --release
+      run: cargo build --target x86_64-pc-windows-gnu --release
     - name: build-output
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: build-output
-        path: target/release/create-rust-app
+        name: x86_64-pc-windows-gnu
+        path: target/release/x86_64-pc-windows-gnu_create-rust-app.exe
