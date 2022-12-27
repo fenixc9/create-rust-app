@@ -26,6 +26,6 @@ jobs:
         name: Build
         with:
           command: build
-          args: --debug --all-features
+          args: --all-features
       - name: check1
         run: ls /target/release
