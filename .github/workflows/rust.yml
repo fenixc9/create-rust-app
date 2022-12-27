@@ -26,6 +26,6 @@ jobs:
         name: Build
         with:
           command: build
-          args: --release --all-features --bin create-rust-app_cli
+          args: --debug --all-features
       - name: check1
         run: ls /target/release
